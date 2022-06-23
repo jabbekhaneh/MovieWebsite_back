@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Portal.Extentions\Portal.Extentions.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Movies\Queries\" />
-  </ItemGroup>
-
 </Project>
