@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Portal.Application.Movies.Contracts;
 using Portal.Application.Movies.Queries.GetAllFilms;
+using Portal.Application.Movies.Queries.GetFilmById;
 using Portal.Domain.Movies;
 using Portal.Extentions;
 
@@ -35,5 +36,13 @@ public class EFFilmRepository : FilmRepository
         response.PageSize = pagination.PageSize;
         response.PageId = pageId;
         return response;
+    }
+
+    public async Task<GetFilmByIdResponseDto> GetById(Guid id)
+    {
+        return await _context.Films
+            .Where(_ => _.Id == id)
+            .ProjectToType<GetFilmByIdResponseDto>()
+            .FirstOrDefaultAsync();
     }
 }

@@ -1,6 +1,4 @@
-﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Moq;
+﻿using Microsoft.EntityFrameworkCore;
 using Portal.Application.Common;
 using Portal.Application.Users.Commands.AddUser;
 using Portal.Application.Users.Contracts;
@@ -11,7 +9,6 @@ using Portal.Extentions;
 using Portal.Extentions.Common;
 using Portal.Test.Factories;
 using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 

@@ -14,6 +14,7 @@ using Portal.Application.Movies.Contracts;
 using Portal.EF.Movies.Repositories;
 using Portal.Application.Movies.Commands.AddFilm;
 using Portal.Application.Movies.Queries.GetAllFilms;
+using Portal.Application.Movies.Queries.GetFilmById;
 
 namespace Portal.EF.Configurations;
 
@@ -48,7 +49,7 @@ public static class EFInitializer
         services.AddTransient<FilmRepository,EFFilmRepository>();
         services.AddMediatR(typeof(AddFilmCommand).GetTypeInfo().Assembly);
         services.AddMediatR(typeof(GetAllFilmsQuery).GetTypeInfo().Assembly);
-        
+        services.AddMediatR(typeof(GetFilmByIdQuery).GetTypeInfo().Assembly);
         #endregion
         #region Users
         services.AddTransient<RoleRepository, EFRoleRepository>();
